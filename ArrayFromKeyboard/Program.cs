@@ -4,17 +4,21 @@ class Program
 {
     static void Main()
     {
-        int[] arr = new int[5];
+        Console.Write("Укажите длинну массива:\t");
+        int arrLength = int.Parse(Console.ReadLine() ?? "0"); 
+        int[] arr = new int[arrLength];
 
         for (int i = 0; i < arr.Length; i++)
         {
-            Console.Write("Введите любое целое число: ");
-            arr[i] = int.Parse(Console.ReadLine());
+            Console.Write($"Введите любое целое число для элемента массива с индексом {i}: ");
+            arr[i] = int.Parse(Console.ReadLine()!);
         }
-        Console.WriteLine("Массив, который получился в итоге.");
+        
+        Console.WriteLine("\nМассив, который получился в итоге.");
+        
         foreach (var i in arr)
         {
-            Console.WriteLine($"Элемент массива: {i}\t");
+            Console.WriteLine($"\tЭлемент массива: {i}");
         }
     }
 }
